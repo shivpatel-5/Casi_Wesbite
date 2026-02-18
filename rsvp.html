@@ -30,15 +30,19 @@
         <div class="rsvp-layout">
             <div class="rsvp-form-section">
                 <h1>Add your details</h1>
-                <form id="lab-rsvp-form">
+                <form action="https://formspree.io/f/xbdakjnw" method="POST">
+                    
+                    <input type="hidden" name="_next" value="thanks.html">
+                    <input type="hidden" name="_subject" value="New RSVP: Aerospace Innovation Day Lab Tours">
+
                     <div class="form-row">
                         <div class="input-field">
                             <label>*First name</label>
-                            <input type="text" name="firstname" placeholder="CASI Ryerson Branch" required>
+                            <input type="text" name="First Name" placeholder="First Name" required>
                         </div>
                         <div class="input-field">
                             <label>*Last name</label>
-                            <input type="text" name="lastname" placeholder="CASI Ryerson Branch" required>
+                            <input type="text" name="Last Name" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="input-field full-width">
@@ -58,7 +62,5 @@
             </div>
         </div>
     </main>
-
-    <script src="script.js"></script>
 </body>
 </html>
