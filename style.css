@@ -298,3 +298,126 @@ footer { padding: 50px 0; text-align: center; border-top: 1px solid #222; margin
 .delay-400 { animation-delay: 0.4s; }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInLeft { to { opacity: 1; transform: translateX(0); } }
+
+/* --- RSVP PAGE SPECIFIC STYLES --- */
+.rsvp-page-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsvp-main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    z-index: 1;
+}
+
+.rsvp-layout {
+    display: flex;
+    gap: 80px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.rsvp-form-section {
+    flex: 1.5;
+}
+
+.rsvp-form-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.input-field input {
+    background: transparent;
+    border: 1px solid #444;
+    padding: 15px;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    border-color: var(--accent-cyan);
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--accent-cyan);
+    color: #000;
+    border: none;
+    padding: 18px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #33ffff;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+}
+
+/* Info Sidebar Box */
+.rsvp-info-sidebar {
+    flex: 1;
+    padding-top: 80px; /* Aligns with form inputs */
+}
+
+.info-box-border {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+}
+
+.info-box-border h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.info-time, .info-location {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .rsvp-layout {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+    .rsvp-info-sidebar {
+        padding-top: 0;
+        width: 100%;
+    }
+}
+
