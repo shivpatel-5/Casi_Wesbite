@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Aerospace Innovation Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="rsvp-page-body">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="CASI-Logo.png" alt="CASI Logo">
+                <span>CASI TMU</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="rsvp-main-container">
+        <div class="rsvp-layout">
+            <div class="rsvp-form-section">
+                <h1>Add your details</h1>
+                <form id="lab-rsvp-form">
+                    <div class="form-row">
+                        <div class="input-field">
+                            <label>*First name</label>
+                            <input type="text" name="firstname" placeholder="CASI Ryerson Branch" required>
+                        </div>
+                        <div class="input-field">
+                            <label>*Last name</label>
+                            <input type="text" name="lastname" placeholder="CASI Ryerson Branch" required>
+                        </div>
+                    </div>
+                    <div class="input-field full-width">
+                        <label>*Email</label>
+                        <input type="email" name="email" placeholder="casi@torontomu.ca" required>
+                    </div>
+                    <button type="submit" class="submit-button">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="rsvp-info-sidebar">
+                <div class="info-box-border">
+                    <h3>Aerospace Innovation Day: Explore TMU Labs</h3>
+                    <p class="info-time">Mar 07, 2026, 6:50 p.m. – 8:50 p.m.</p>
+                    <p class="info-location">Toronto Metropolitan University</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
