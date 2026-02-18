@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSVP - Aerospace Innovation Day</title>
+    <title>RSVP - CASI TMU Events</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -33,7 +33,7 @@
                 <form action="https://formspree.io/f/xbdakjnw" method="POST">
                     
                     <input type="hidden" name="_next" value="thanks.html">
-                    <input type="hidden" name="_subject" value="New RSVP: Aerospace Innovation Day Lab Tours">
+                    <input type="hidden" name="_subject" value="New Event RSVP Submission">
 
                     <div class="form-row">
                         <div class="input-field">
@@ -45,19 +45,31 @@
                             <input type="text" name="Last Name" placeholder="Last Name" required>
                         </div>
                     </div>
+
+                    <div class="input-field full-width" style="margin-bottom: 30px;">
+                        <label>*Select Event</label>
+                        <select name="Event Selection" required style="background: transparent; border: 1px solid #444; padding: 15px; color: #fff; font-size: 1rem; border-radius: 4px; appearance: none; cursor: pointer;">
+                            <option value="" disabled selected style="background: #0b0d17;">Choose an event...</option>
+                            <option value="Lab Tours" style="background: #0b0d17;">Aerospace Innovation Day: Explore TMU Labs</option>
+                            <option value="Stellar Dinner" style="background: #0b0d17;">Stellar Dinner: Industry Partnerships Celebration</option>
+                        </select>
+                    </div>
+
                     <div class="input-field full-width">
                         <label>*Email</label>
-                        <input type="email" name="email" placeholder="casi@torontomu.ca" required>
+                        <input type="email" name="Email" placeholder="casi@torontomu.ca" required>
                     </div>
+
                     <button type="submit" class="submit-button">SUBMIT</button>
                 </form>
             </div>
 
             <div class="rsvp-info-sidebar">
                 <div class="info-box-border">
-                    <h3>Aerospace Innovation Day: Explore TMU Labs</h3>
-                    <p class="info-time">Mar 07, 2026, 6:50 p.m. – 8:50 p.m.</p>
+                    <h3>March 7th Conference</h3>
+                    <p class="info-time">Multiple Sessions | Mar 07, 2026</p>
                     <p class="info-location">Toronto Metropolitan University</p>
+                    <p style="font-size: 0.85rem; margin-top: 15px; color: var(--accent-cyan);">Please select your specific session in the dropdown menu to the left.</p>
                 </div>
             </div>
         </div>
