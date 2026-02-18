@@ -1,5 +1,3 @@
-// CASI TMU Website Logic
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. MOBILE NAVIGATION ---
@@ -8,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            // Toggle Flex display or class
             if (navLinks.style.display === 'flex') {
                 navLinks.style.display = 'none';
             } else {
@@ -31,27 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                if (window.innerWidth <= 768) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                if (window.innerWidth <= 768 && navLinks) {
                     navLinks.style.display = 'none';
                 }
             }
         });
     });
 
-    // --- 3. SCROLL ANIMATIONS (Intersection Observer) ---
-    // This watches for elements with 'fade-in-up' or 'fade-in-left' 
-    // and resets/plays animation when they come into view if needed,
-    // or simply lets them play once on load (CSS animation handles load).
-    // For scroll-triggered animations on other sections:
+    // --- 3. TEAM TOGGLE DROPDOWN ---
+    const teamBtn = document.getElementById('team-toggle-btn');
+    const extraTeam = document.getElementById('extra-team');
 
-    const observerOptions = {
-        threshold: 0.1
-    };
+    if (teamBtn && extraTeam) {
+        teamBtn.addEventListener('click', () => {
+            const isOpen = extraTeam.classList.toggle('is-open');
+            teamBtn.classList.toggle('active');
 
+            if (isOpen) {
+                teamBtn.innerHTML = `Show Less <i class="fas fa-chevron-down"></i>`;
+            } else {
+                teamBtn.innerHTML = `Show All Members <i class="fas fa-chevron-down"></i>`;
+                // Scroll back to the top of the team section for better user experience
+                document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // --- 4. SCROLL ANIMATIONS ---
+    const observerOptions = { threshold: 0.1 };
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -61,14 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Select grid items that should animate in
-    const cards = document.querySelectorAll('.event-card, .mission-content > div');
-    cards.forEach(card => {
-        // Set initial state for JS animation
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        scrollObserver.observe(card);
+    const animateElements = document.querySelectorAll('.event-card, .mission-content > div');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        scrollObserver.observe(el);
     });
 
 });
