@@ -7,6 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring the conference poster fits nicely within the card */
+        .event-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid #333;
+        }
+        .event-actions a {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div class="stars"></div>
@@ -34,17 +48,21 @@
         
         <div class="events-grid">
             <div class="event-card">
+                <div class="event-image">
+                    <img src="CASI Conference.jpg" alt="Beyond Earth: The Next Frontier Conference Poster">
+                </div>
                 <div class="card-content">
                     <h3>CASI Space Conference 2026 - Beyond Earth: The Next Frontier</h3>
-                    <p class="event-meta">Sat, Mar 14 | Toronto Metropolitan University</p>
+                    <p class="event-meta">Mar 14 (Sat) & Mar 15 (Sun) | DCC 103/104 (Daphen Cockwell Center, TMU)</p>
+                    <p><strong>Theme:</strong> Sustainability in Engineering: Engineering sustainable systems for extreme and autonomous space operations.</p>
                     <p>Join us for a two-day immersive experience bringing together students, researchers, and industry professionals from across the aerospace, aviation, and space sectors.</p>
                     <div class="event-actions">
-                        <a href="#" class="https://docs.google.com/forms/d/e/1FAIpQLSc7odIvGEUYF_u9AE1g5KDNSS5mDM4YEXiLrNs0VT9TYgayig/viewform">More info</a>
-                        <a href="#" class="https://checkout.square.site/merchant/068C0Y8F0SVH6/checkout/VHGKIBNIILJZZYGWH7LW42TJ">Buy Tickets</a>
-                        <a href="rsvp.html" class="btn btn-secondary">RSVP</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7odIvGEUYF_u9AE1g5KDNSS5mDM4YEXiLrNs0VT9TYgayig/viewform" class="details-link" target="_blank">Case Comp Form</a>
+                        <a href="https://checkout.square.site/merchant/068C0Y8F0SVH6/checkout/VHGKIBNIILJZZYGWH7LW42TJ" class="btn btn-primary" target="_blank">Buy Tickets</a>
                     </div>
                 </div>
             </div>
+
             <div class="event-card">
                 <div class="card-content">
                     <h3>SkyBound Futures: Aerospace Career Fair</h3>
@@ -99,7 +117,7 @@
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; 2025 CASI TMU. All Rights Reserved.</p>
+            <p>&copy; 2026 CASI TMU. All Rights Reserved.</p>
         </div>
     </footer>
 
