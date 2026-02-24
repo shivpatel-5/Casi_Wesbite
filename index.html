@@ -7,6 +7,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific layout fixes for the side-by-side event view */
+        .featured-event-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap; /* Stack on mobile */
+        }
+        .event-image-large {
+            flex: 1;
+            min-width: 320px;
+        }
+        .event-image-large img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+        .event-image-large img:hover {
+            transform: scale(1.02);
+        }
+        .event-details-large {
+            flex: 1.2;
+            min-width: 320px;
+        }
+        .explore-footer {
+            text-align: center;
+            padding: 50px 20px;
+            border: 2px dashed #444;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -45,32 +81,38 @@
         </div>
     </header>
 
-    <section id="events-preview" class="events-section">
+    <section id="events-preview" class="events-section" style="padding: 100px 5% 50px 5%;">
         <h2 class="section-title">March 2026 Conference</h2>
-        <div class="events-grid">
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="CASI Conference.jpg" alt="Beyond Earth Conference Poster" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;">
-                </div>
-                <div class="card-content">
-                    <h3>CASI Space Conference 2026 - Beyond Earth: The Next Frontier</h3>
-                    <p class="event-meta">Mar 14 & 15 | DCC 103/104 (TMU)</p>
-                    <p>Join us for a two-day immersive experience bringing together students, researchers, and industry professionals from across the aerospace sectors.</p>
-                    <div class="event-actions">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7odIvGEUYF_u9AE1g5KDNSS5mDM4YEXiLrNs0VT9TYgayig/viewform" class="details-link" target="_blank">More info</a>
-                        <a href="https://checkout.square.site/merchant/068C0Y8F0SVH6/checkout/VHGKIBNIILJZZYGWH7LW42TJ" class="btn btn-primary" target="_blank">Buy Tickets</a>
-
-                    </div>
-                </div>
+        
+        <div class="featured-event-container">
+            <div class="event-image-large">
+                <img src="CASI Conference.jpg" alt="Beyond Earth Conference Poster">
             </div>
 
-            <div class="event-card" style="display: flex; align-items: center; justify-content: center; text-align: center; border: 2px dashed #444;">
-                <div class="card-content">
-                    <h3>Explore All Events</h3>
-                    <p>See our full 2026 calendar, including Lab Tours and Networking Dinners.</p>
-                    <a href="events.html" class="details-link" style="font-size: 1.1rem;">Go to Events Page <i class="fas fa-arrow-right"></i></a>
+            <div class="event-details-large">
+                <h3 style="font-family: 'Orbitron', sans-serif; color: #00d4ff; font-size: 2.2rem; margin-bottom: 20px;">
+                    Beyond Earth: The Next Frontier
+                </h3>
+                <p class="event-meta" style="font-weight: 600; color: #fff; margin-bottom: 15px; font-size: 1.1rem;">
+                    <i class="fas fa-calendar-alt"></i> Mar 14 & 15 | <i class="fas fa-map-marker-alt"></i> DCC 103/104 (TMU)
+                </p>
+                <p style="line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">
+                    Join us for a two-day immersive experience bringing together students, researchers, and industry professionals from across the aerospace, aviation, and space sectors.
+                </p>
+                
+                <div class="event-actions" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7odIvGEUYF_u9AE1g5KDNSS5mDM4YEXiLrNs0VT9TYgayig/viewform" class="btn btn-outline" target="_blank">Case Comp Form</a>
+                    <a href="https://checkout.square.site/merchant/068C0Y8F0SVH6/checkout/VHGKIBNIILJZZYGWH7LW42TJ" class="btn btn-primary" target="_blank">Buy Tickets</a>
                 </div>
             </div>
+        </div>
+
+        <div class="explore-footer">
+            <h3 style="font-family: 'Orbitron', sans-serif; margin-bottom: 10px;">Explore All Events</h3>
+            <p style="margin-bottom: 20px; opacity: 0.8;">Check out our full 2026 calendar, including Lab Tours, Career Fairs, and Networking Dinners.</p>
+            <a href="events.html" class="details-link" style="font-size: 1.2rem; font-weight: 700;">
+                Go to Events Page <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
@@ -83,16 +125,8 @@
                 <a href="team.html" class="btn btn-outline">Meet the People Behind CASI</a>
             </div>
             <div class="mission-image">
-                <img src="CASI-Tour-MHI.jpg" alt="CASI TMU Team at MHI" style="border-radius: 8px; width: 100%; height: auto;">
+                <img src="CASI-Tour-MHI.jpg" alt="CASI TMU Team at MHI" style="border-radius: 8px; width: 100%;">
             </div>
-        </div>
-    </section>
-
-    <section id="team-cta" class="team-section">
-        <h2 class="section-title">Our Leadership</h2>
-        <div class="hero-card" style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>Our team consists of dedicated aerospace students and specialists working together to push the boundaries of student-led initiatives at TMU.</p>
-            <a href="team.html" class="btn btn-primary">Meet the Executive Team <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -110,4 +144,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
