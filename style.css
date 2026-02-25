@@ -133,7 +133,7 @@ nav {
 
 .hero-content {
     width: 90%;
-    max-width: 1200px;
+    max-width: 2400px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
@@ -420,4 +420,5 @@ footer { padding: 50px 0; text-align: center; border-top: 1px solid #222; margin
         width: 100%;
     }
 }
+
 
