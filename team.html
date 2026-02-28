@@ -8,37 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* New styling for BIGGER, SQUARE team photos */
+        /* FORCE SQUARE PHOTOS and OVERRIDE style.css */
         
-        /* The container for the image */
         .team-img-wrapper {
-            width: 220px; /* Larger than 150px */
-            height: 220px;
-            background: #222; /* Adds a background for non-square photos */
-            border-radius: 12px; /* Soft square, definitely not a circle */
-            overflow: hidden; /* Important for clean edges */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Adds depth */
-            display: flex; /* For perfect centering */
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto; /* Centered on the card */
-            border: 2px solid #333; /* Subtle frame */
+            width: 220px !important;
+            height: 220px !important;
+            border-radius: 0 !important; /* 0 means sharp corners, strictly square, NO circles */
+            overflow: hidden !important;
+            margin: 0 auto !important;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4) !important;
+            display: block !important;
+            background: transparent !important;
+            border: 2px solid #333 !important;
         }
 
-        /* The actual image within the wrapper */
         .team-img-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Shows the FULL photo, no cropping */
-            display: block; /* Removes any inline space */
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important; /* Fills the square perfectly so they are 100% even */
+            object-position: center 15% !important; /* Keeps the face in the frame, prevents bad cropping */
+            border-radius: 0 !important; /* Forces the image itself to not be circular */
+            display: block !important;
         }
 
-        /* Centering text within each card */
         .team-card {
             text-align: center;
         }
-
-        /* Updated placeholder URLs to be 220x220 */
     </style>
 </head>
 <body>
@@ -141,7 +136,7 @@
                 <p>VP Marketing</p>
             </div>
             <div class="team-card">
-                <div class="team-img-wrapper"><img src="Kimia%20Baheri.jpg" alt="Kimia"></div>
+                <div class="team-img-wrapper"><img src="Kimia%20Baheri.JPG" alt="Kimia"></div>
                 <h3>Kimia</h3>
                 <p>VP Admin</p>
             </div>
