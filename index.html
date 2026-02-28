@@ -75,42 +75,51 @@
             display: block !important;
         }
         
-        /* First floating image */
-        .img-float-1 {
-            width: 80% !important; /* Relative to container */
-            max-width: 450px !important; /* Stops it from getting too massive */
-            position: absolute !important;
-            top: 5% !important;
-            right: 0 !important;
+        /* Shared styles for all floating images */
+        .hero-image-gallery img {
             border-radius: 12px !important;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
             border: 2px solid rgba(255, 255, 255, 0.1) !important;
-            animation: floatAnim 6s ease-in-out infinite !important;
-            z-index: 2 !important;
-            transition: transform 0.3s ease !important;
+            transition: transform 0.3s ease, z-index 0.3s ease !important;
             object-fit: cover !important;
+            position: absolute !important;
         }
 
-        /* Second floating image (offset) */
+        /* First floating image - Top Right, Large */
+        .img-float-1 {
+            width: 70% !important; 
+            max-width: 400px !important;
+            top: 5% !important;
+            right: 0 !important;
+            animation: floatAnim 6s ease-in-out infinite !important;
+            z-index: 2 !important;
+        }
+
+        /* Second floating image - Bottom Left, Medium */
         .img-float-2 {
-            width: 70% !important;
-            max-width: 380px !important;
-            position: absolute !important;
+            width: 60% !important;
+            max-width: 330px !important;
             bottom: 5% !important;
             left: 5% !important;
-            border-radius: 12px !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
-            border: 2px solid rgba(255, 255, 255, 0.1) !important;
             animation: floatAnim 8s ease-in-out infinite reverse !important; /* Floats opposite direction */
             z-index: 1 !important;
-            transition: transform 0.3s ease !important;
-            object-fit: cover !important;
+        }
+
+        /* Third floating image - Center/Middle Right, Smaller */
+        .img-float-3 {
+            width: 50% !important;
+            max-width: 280px !important;
+            top: 35% !important; /* Overlaps both vertically */
+            right: 15% !important;
+            animation: floatAnim 7s ease-in-out infinite !important;
+            animation-delay: 1s; /* Offset timing */
+            z-index: 1.5 !important; /* Sits between 1 and 2 */
         }
 
         /* Hover effect brings the image to the front */
-        .img-float-1:hover, .img-float-2:hover {
+        .img-float-1:hover, .img-float-2:hover, .img-float-3:hover {
             transform: scale(1.05) !important;
-            z-index: 3 !important;
+            z-index: 10 !important; /* Pop over everything */
             animation-play-state: paused !important; /* Pauses floating when hovered */
         }
 
@@ -126,8 +135,10 @@
                 height: 400px !important;
                 margin-top: 40px !important;
             }
-            .img-float-1 { width: 85% !important; top: 0 !important; right: 5% !important; }
-            .img-float-2 { width: 75% !important; bottom: 0 !important; left: 5% !important; }
+            /* Stack them slightly more tightly on mobile */
+            .img-float-1 { width: 75% !important; top: 0 !important; right: 5% !important; }
+            .img-float-2 { width: 65% !important; bottom: 0 !important; left: 5% !important; }
+            .img-float-3 { width: 55% !important; top: 30% !important; right: 10% !important; }
         }
     </style>
 </head>
@@ -236,5 +247,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
