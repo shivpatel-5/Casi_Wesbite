@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASI TMU - Name</title>
+    <title>CASI TMU - Elevating the Aerospace Community</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -42,6 +42,67 @@
             background: rgba(255,255,255,0.05);
             margin-top: 20px;
         }
+
+        /* --- NEW FLOATING COLLAGE STYLES --- */
+        .hero-image-gallery {
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* First floating image */
+        .img-float-1 {
+            width: 75%;
+            position: absolute;
+            top: 5%;
+            right: 0;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: floatAnim 6s ease-in-out infinite;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        /* Second floating image (offset) */
+        .img-float-2 {
+            width: 65%;
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: floatAnim 8s ease-in-out infinite reverse; /* Floats opposite direction */
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect brings the image to the front */
+        .img-float-1:hover, .img-float-2:hover {
+            transform: scale(1.05);
+            z-index: 3;
+            animation-play-state: paused; /* Pauses floating when hovered */
+        }
+
+        @keyframes floatAnim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Mobile adjustments for the collage */
+        @media (max-width: 768px) {
+            .hero-image-gallery {
+                min-height: 300px;
+                margin-top: 40px;
+            }
+            .img-float-1 { width: 85%; top: 0; right: 5%; }
+            .img-float-2 { width: 75%; bottom: -10%; left: 5%; }
+        }
     </style>
 </head>
 <body>
@@ -69,15 +130,19 @@
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1 class="fade-in-up">Name</h1>
+            <h1 class="fade-in-up">CASI TMU</h1>
             <div id="welcome" class="hero-card fade-in-up delay-200">
-                <h2>Empowering Future Innovators</h2>
+                <h2>Elevating the Aerospace Community</h2>
                 <p>Welcome to CASI TMU. Join us as we embark on an exciting journey through aerospace innovation and professional growth at Toronto Metropolitan University.</p>
                 <a href="events.html" class="btn btn-primary">See What's Happening</a>
             </div>
         </div>
+        
         <div class="hero-image-container fade-in-left delay-400">
-            <img src="CASI-Tour-MHI.jpg" alt="Space Innovation" class="hero-img">
+            <div class="hero-image-gallery">
+                <img src="CASI-Tour-MHI.jpg" alt="Space Innovation" class="img-float-1">
+                <img src="CASIHome2.jpg" alt="CASI Team" class="img-float-2">
+            </div>
         </div>
     </header>
 
@@ -144,6 +209,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
