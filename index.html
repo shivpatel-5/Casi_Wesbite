@@ -43,49 +43,75 @@
             margin-top: 20px;
         }
 
-        /* --- NEW FLOATING COLLAGE STYLES --- */
+        /* --- BULLETPROOF FLOATING COLLAGE STYLES --- */
+        
+        /* Force the hero to be side-by-side */
+        .hero {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            flex-wrap: wrap;
+            overflow: hidden; /* Stops horizontal scrollbars */
+        }
+        
+        .hero-content {
+            flex: 1 !important;
+            min-width: 320px !important;
+            z-index: 10;
+        }
+
+        .hero-image-container {
+            flex: 1 !important;
+            min-width: 350px !important; 
+            display: block !important;
+            position: relative;
+            z-index: 5;
+        }
+
         .hero-image-gallery {
             position: relative;
-            width: 100%;
-            min-height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100% !important;
+            height: 550px !important; /* Concrete height so absolute items have a canvas */
+            display: block !important;
         }
         
         /* First floating image */
         .img-float-1 {
-            width: 75%;
-            position: absolute;
-            top: 5%;
-            right: 0;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            animation: floatAnim 6s ease-in-out infinite;
-            z-index: 2;
-            transition: transform 0.3s ease;
+            width: 80% !important; /* Relative to container */
+            max-width: 450px !important; /* Stops it from getting too massive */
+            position: absolute !important;
+            top: 5% !important;
+            right: 0 !important;
+            border-radius: 12px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+            animation: floatAnim 6s ease-in-out infinite !important;
+            z-index: 2 !important;
+            transition: transform 0.3s ease !important;
+            object-fit: cover !important;
         }
 
         /* Second floating image (offset) */
         .img-float-2 {
-            width: 65%;
-            position: absolute;
-            bottom: 5%;
-            left: 0;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            animation: floatAnim 8s ease-in-out infinite reverse; /* Floats opposite direction */
-            z-index: 1;
-            transition: transform 0.3s ease;
+            width: 70% !important;
+            max-width: 380px !important;
+            position: absolute !important;
+            bottom: 5% !important;
+            left: 5% !important;
+            border-radius: 12px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+            animation: floatAnim 8s ease-in-out infinite reverse !important; /* Floats opposite direction */
+            z-index: 1 !important;
+            transition: transform 0.3s ease !important;
+            object-fit: cover !important;
         }
 
         /* Hover effect brings the image to the front */
         .img-float-1:hover, .img-float-2:hover {
-            transform: scale(1.05);
-            z-index: 3;
-            animation-play-state: paused; /* Pauses floating when hovered */
+            transform: scale(1.05) !important;
+            z-index: 3 !important;
+            animation-play-state: paused !important; /* Pauses floating when hovered */
         }
 
         @keyframes floatAnim {
@@ -97,11 +123,11 @@
         /* Mobile adjustments for the collage */
         @media (max-width: 768px) {
             .hero-image-gallery {
-                min-height: 300px;
-                margin-top: 40px;
+                height: 400px !important;
+                margin-top: 40px !important;
             }
-            .img-float-1 { width: 85%; top: 0; right: 5%; }
-            .img-float-2 { width: 75%; bottom: -10%; left: 5%; }
+            .img-float-1 { width: 85% !important; top: 0 !important; right: 5% !important; }
+            .img-float-2 { width: 75% !important; bottom: 0 !important; left: 5% !important; }
         }
     </style>
 </head>
